@@ -1,5 +1,6 @@
 import { assertUnreachable } from "./_misc.ts";
 
+/** Time duration units supported by {@link differenceUtc}. */
 export type Unit =
   | "milliseconds"
   | "seconds"
@@ -40,11 +41,7 @@ export function timeSinceMidnightUtc(date: Date): number {
  *
  * The weeks, days and hours units are linear time units as you'd expect. The
  * month and up units are a little unusual in that months vary in length, so the
- * fractions vary according to the month(s) they bridge.
- *
- * Month fractions work by placing the `from` day & time in each month, and
- * finding the relative position of `to` (in linear time) between the two
- * surrounding points.
+ * fractions vary according to the months they bridge. See {@linkcode monthDifferenceUtc}.
  */
 export function differenceUtc(from: Date, to: Date, unit: Unit): number {
   switch (unit) {
@@ -70,12 +67,20 @@ export function differenceUtc(from: Date, to: Date, unit: Unit): number {
   assertUnreachable(unit);
 }
 
-/**
- * Get the fractional number of months between from and to.
+/** Get the fractional number of months between `from` and `to`.
  *
- * The value is negative when `to` is before `from`. The fractional component is
- * the relative position of `to` between the `from` month boundaries either side
- * of it, with millisecond precision.
+ * Month fractions work by placing the `from` day & time in each month to define
+ * boundary points. The fractional part of the result is the relative position
+ * of `to` (in linear time) between the two boundary points surrounding `to`.
+ *
+ * Boundaries that fall in days that don't occur in a month are handled as
+ * "imaginary days" — as if the missing days existed with 0 length. The boundary
+ * becomes the first real ms on the opposite side of the boundary to `to`, such
+ * that the fractional position adjacent to a boundary in an imaginary day can
+ * never be exactly 0 or 1. See the main module docs for examples.
+ *
+ * When `to` falls exactly on a boundary point, the result is an exact integer.
+ * The result is negative when `to` is before `from`.
  */
 export function monthDifferenceUtc(from: Date, to: Date): number {
   const toY = to.getUTCFullYear(),
