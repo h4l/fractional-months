@@ -1,0 +1,23 @@
+{
+  "name": "@h4l/fractional-months",
+  "version": "1.0.0-rc.0",
+  "exports": "./mod.ts",
+  "tasks": {
+    "test": "deno test",
+    "lint": "deno lint",
+    "fmt": "deno fmt --check",
+    "typecheck": "deno check *.ts"
+  },
+  "publish": {
+    "include": [
+      "README.md",
+      "LICENSE.md",
+      "*.ts"
+    ],
+    "exclude": [
+      "dev_deps.ts",
+      "_testing.ts",
+      "*_test.ts"
+    ]
+  }
+}
