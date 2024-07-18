@@ -1,0 +1,4 @@
+.*
+!.git*
+!.editorconfig
+/docs
