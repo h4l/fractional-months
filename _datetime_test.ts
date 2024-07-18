@@ -2,7 +2,7 @@ import {
   differenceUtc,
   monthDifferenceUtc,
   timeSinceMidnightUtc,
-  Unit,
+  type Unit,
 } from "./_datetime.ts";
 import { date } from "./_testing.ts";
 import {
