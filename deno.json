@@ -6,7 +6,8 @@
     "test": "deno test",
     "lint": "deno lint",
     "fmt": "deno fmt --check",
-    "typecheck": "deno check *.ts"
+    "typecheck": "deno check *.ts",
+    "create-git-release-tag": "bash -c 'version=$(jq < deno.json -r .version); git tag -a \"v${version:?}\" -m \"${version:?}\"'"
   },
   "publish": {
     "include": [
