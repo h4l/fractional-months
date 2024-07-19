@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Validate
+        uses: docker/bake-action@v5
+        with:
+          source: ${{ github.server_url }}/${{ github.repository }}.git#${{ github.sha }}
+          targets: tasks
+
+  publish:
+    # Only version tags
+    if: startsWith(github.event.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # The OIDC ID token is used for authentication with JSR.
+    steps:
+      - uses: actions/checkout@v4
+      - run: npx jsr publish
