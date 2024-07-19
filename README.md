@@ -1,5 +1,9 @@
 # fractional-months
 
+[![JSR](https://jsr.io/badges/@h4l/fractional-months)](https://jsr.io/@h4l/fractional-months)
+[![JSR Score](https://jsr.io/badges/@h4l/fractional-months/score)](https://jsr.io/@h4l/fractional-months)
+[![main branch CI status](https://github.com/h4l/fractional-months/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/h4l/fractional-months/actions)
+
 A small typescript library to calculate the difference between points in time as
 fractional months.
 
@@ -16,3 +20,21 @@ positive floating-point values:
   - Boundaries are at the day/time of the from-date in each month.
 - Month boundaries that occur on calendar days that don't exist in all months
   are handled as if the days existed with 0-length — "imaginary days".
+
+See the [module docs](https://jsr.io/@h4l/fractional-months) for more.
+
+## Install
+
+This module is published on JSR, it can be installed as follows; see
+[JSR's Using packages page](https://jsr.io/docs/using-packages) for more info.
+
+```console
+# deno
+deno add @h4l/fractional-months
+
+# npm (one of the below, depending on your package manager)
+npx jsr add @h4l/fractional-months
+yarn dlx jsr add @h4l/fractional-months
+pnpm dlx jsr add @h4l/fractional-months
+bunx jsr add @h4l/fractional-months
+```
