@@ -1,5 +1,11 @@
 /**
- * Calculate the difference between points in time as fractional months.
+ * Calculate the difference between points in time as fractional time or month
+ * units.
+ *
+ * This module provides similar functionality to
+ * [@std/datetime's `difference()`](https://jsr.io/@std/datetime/doc/~/difference)
+ * function. That returns rounded integers, whereas this module returns
+ * fractional values that you can choose how to round.
  *
  * Fractional months simplify month-difference calculations by abstracting the
  * difference in length between months. Month-difference values are negative or
