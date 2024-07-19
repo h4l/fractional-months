@@ -30,7 +30,8 @@ See the [module docs](https://jsr.io/@h4l/fractional-months) for more.
 
 ## Install
 
-This module is published on JSR, it can be installed as follows; see
+This module is [published on JSR](https://jsr.io/@h4l/fractional-months), it can
+be installed as follows; see
 [JSR's Using packages page](https://jsr.io/docs/using-packages) for more info.
 
 ```console
