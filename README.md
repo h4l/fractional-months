@@ -1,7 +1,7 @@
 # fractional-months
 
 [![JSR](https://jsr.io/badges/@h4l/fractional-months)](https://jsr.io/@h4l/fractional-months)
-[![JSR Score](https://jsr.io/badges/@h4l/fractional-months/score)](https://jsr.io/@h4l/fractional-months)
+[![JSR Score](https://jsr.io/badges/@h4l/fractional-months/score)](https://jsr.io/@h4l/fractional-months/score)
 [![main branch CI status](https://github.com/h4l/fractional-months/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/h4l/fractional-months/actions)
 
 A small typescript library to calculate the difference between points in time as
