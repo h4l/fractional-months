@@ -10,6 +10,13 @@ and this project adheres to
 
 Nothing yet.
 
+## [1.0.1] — 2024-07-19
+
+### Changed
+
+- Tweaked docs to clarify that months are not the only unit
+- Link to @std/datetime `difference()` more prominently in docs
+
 ## [1.0.0] — 2024-07-19
 
 ### Added
@@ -18,5 +25,6 @@ Nothing yet.
 - This module was extracted from https://github.com/h4l/anonystat as it seemed
   useful to reuse.
 
-[unreleased]: https://github.com/h4l/fractional-months/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/h4l/fractional-months/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/h4l/fractional-months/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/h4l/fractional-months/commits/v1.0.0
